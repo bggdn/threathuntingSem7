@@ -131,91 +131,93 @@ $ starships  <list> <"X-wing", "Imperial shuttle">, <>, <>, "TIE Advanced x1", <
 |Sly Moore             |    178|
 |Tion Medon            |    206|
 
-> mutate(starwars, BMI=mass/(height^2)) %>% select(name, height, mass, BMI) |> knitr::kable(format='markdown')
+> mutate(starwars, BMI=mass/((height/100)^2)) %>% select(name, height, mass, BMI) |> knitr::kable(format='markdown')
+
+
 |name                  | height|   mass|       BMI|
 |:---------------------|------:|------:|---------:|
-|Luke Skywalker        |    172|   77.0| 0.0026028|
-|C-3PO                 |    167|   75.0| 0.0026892|
-|R2-D2                 |     96|   32.0| 0.0034722|
-|Darth Vader           |    202|  136.0| 0.0033330|
-|Leia Organa           |    150|   49.0| 0.0021778|
-|Owen Lars             |    178|  120.0| 0.0037874|
-|Beru Whitesun Lars    |    165|   75.0| 0.0027548|
-|R5-D4                 |     97|   32.0| 0.0034010|
-|Biggs Darklighter     |    183|   84.0| 0.0025083|
-|Obi-Wan Kenobi        |    182|   77.0| 0.0023246|
-|Anakin Skywalker      |    188|   84.0| 0.0023766|
+|Luke Skywalker        |    172|   77.0|  26.02758|
+|C-3PO                 |    167|   75.0|  26.89232|
+|R2-D2                 |     96|   32.0|  34.72222|
+|Darth Vader           |    202|  136.0|  33.33007|
+|Leia Organa           |    150|   49.0|  21.77778|
+|Owen Lars             |    178|  120.0|  37.87401|
+|Beru Whitesun Lars    |    165|   75.0|  27.54821|
+|R5-D4                 |     97|   32.0|  34.00999|
+|Biggs Darklighter     |    183|   84.0|  25.08286|
+|Obi-Wan Kenobi        |    182|   77.0|  23.24598|
+|Anakin Skywalker      |    188|   84.0|  23.76641|
 |Wilhuff Tarkin        |    180|     NA|        NA|
-|Chewbacca             |    228|  112.0| 0.0021545|
-|Han Solo              |    180|   80.0| 0.0024691|
-|Greedo                |    173|   74.0| 0.0024725|
-|Jabba Desilijic Tiure |    175| 1358.0| 0.0443429|
-|Wedge Antilles        |    170|   77.0| 0.0026644|
-|Jek Tono Porkins      |    180|  110.0| 0.0033951|
-|Yoda                  |     66|   17.0| 0.0039027|
-|Palpatine             |    170|   75.0| 0.0025952|
-|Boba Fett             |    183|   78.2| 0.0023351|
-|IG-88                 |    200|  140.0| 0.0035000|
-|Bossk                 |    190|  113.0| 0.0031302|
-|Lando Calrissian      |    177|   79.0| 0.0025216|
-|Lobot                 |    175|   79.0| 0.0025796|
-|Ackbar                |    180|   83.0| 0.0025617|
+|Chewbacca             |    228|  112.0|  21.54509|
+|Han Solo              |    180|   80.0|  24.69136|
+|Greedo                |    173|   74.0|  24.72518|
+|Jabba Desilijic Tiure |    175| 1358.0| 443.42857|
+|Wedge Antilles        |    170|   77.0|  26.64360|
+|Jek Tono Porkins      |    180|  110.0|  33.95062|
+|Yoda                  |     66|   17.0|  39.02663|
+|Palpatine             |    170|   75.0|  25.95156|
+|Boba Fett             |    183|   78.2|  23.35095|
+|IG-88                 |    200|  140.0|  35.00000|
+|Bossk                 |    190|  113.0|  31.30194|
+|Lando Calrissian      |    177|   79.0|  25.21625|
+|Lobot                 |    175|   79.0|  25.79592|
+|Ackbar                |    180|   83.0|  25.61728|
 |Mon Mothma            |    150|     NA|        NA|
 |Arvel Crynyd          |     NA|     NA|        NA|
-|Wicket Systri Warrick |     88|   20.0| 0.0025826|
-|Nien Nunb             |    160|   68.0| 0.0026563|
-|Qui-Gon Jinn          |    193|   89.0| 0.0023893|
-|Nute Gunray           |    191|   90.0| 0.0024670|
+|Wicket Systri Warrick |     88|   20.0|  25.82645|
+|Nien Nunb             |    160|   68.0|  26.56250|
+|Qui-Gon Jinn          |    193|   89.0|  23.89326|
+|Nute Gunray           |    191|   90.0|  24.67038|
 |Finis Valorum         |    170|     NA|        NA|
-|Padmé Amidala         |    185|   45.0| 0.0013148|
-|Jar Jar Binks         |    196|   66.0| 0.0017180|
-|Roos Tarpals          |    224|   82.0| 0.0016342|
+|Padmé Amidala         |    185|   45.0|  13.14828|
+|Jar Jar Binks         |    196|   66.0|  17.18034|
+|Roos Tarpals          |    224|   82.0|  16.34247|
 |Rugor Nass            |    206|     NA|        NA|
 |Ric Olié              |    183|     NA|        NA|
 |Watto                 |    137|     NA|        NA|
-|Sebulba               |    112|   40.0| 0.0031888|
+|Sebulba               |    112|   40.0|  31.88776|
 |Quarsh Panaka         |    183|     NA|        NA|
 |Shmi Skywalker        |    163|     NA|        NA|
-|Darth Maul            |    175|   80.0| 0.0026122|
+|Darth Maul            |    175|   80.0|  26.12245|
 |Bib Fortuna           |    180|     NA|        NA|
-|Ayla Secura           |    178|   55.0| 0.0017359|
-|Ratts Tyerel          |     79|   15.0| 0.0024035|
-|Dud Bolt              |     94|   45.0| 0.0050928|
+|Ayla Secura           |    178|   55.0|  17.35892|
+|Ratts Tyerel          |     79|   15.0|  24.03461|
+|Dud Bolt              |     94|   45.0|  50.92802|
 |Gasgano               |    122|     NA|        NA|
-|Ben Quadinaros        |    163|   65.0| 0.0024465|
-|Mace Windu            |    188|   84.0| 0.0023766|
-|Ki-Adi-Mundi          |    198|   82.0| 0.0020916|
-|Kit Fisto             |    196|   87.0| 0.0022647|
+|Ben Quadinaros        |    163|   65.0|  24.46460|
+|Mace Windu            |    188|   84.0|  23.76641|
+|Ki-Adi-Mundi          |    198|   82.0|  20.91623|
+|Kit Fisto             |    196|   87.0|  22.64681|
 |Eeth Koth             |    171|     NA|        NA|
-|Adi Gallia            |    184|   50.0| 0.0014768|
+|Adi Gallia            |    184|   50.0|  14.76843|
 |Saesee Tiin           |    188|     NA|        NA|
 |Yarael Poof           |    264|     NA|        NA|
-|Plo Koon              |    188|   80.0| 0.0022635|
+|Plo Koon              |    188|   80.0|  22.63468|
 |Mas Amedda            |    196|     NA|        NA|
-|Gregar Typho          |    185|   85.0| 0.0024836|
+|Gregar Typho          |    185|   85.0|  24.83565|
 |Cordé                 |    157|     NA|        NA|
 |Cliegg Lars           |    183|     NA|        NA|
-|Poggle the Lesser     |    183|   80.0| 0.0023888|
-|Luminara Unduli       |    170|   56.2| 0.0019446|
-|Barriss Offee         |    166|   50.0| 0.0018145|
+|Poggle the Lesser     |    183|   80.0|  23.88844|
+|Luminara Unduli       |    170|   56.2|  19.44637|
+|Barriss Offee         |    166|   50.0|  18.14487|
 |Dormé                 |    165|     NA|        NA|
-|Dooku                 |    193|   80.0| 0.0021477|
+|Dooku                 |    193|   80.0|  21.47709|
 |Bail Prestor Organa   |    191|     NA|        NA|
-|Jango Fett            |    183|   79.0| 0.0023590|
-|Zam Wesell            |    168|   55.0| 0.0019487|
-|Dexter Jettster       |    198|  102.0| 0.0026018|
-|Lama Su               |    229|   88.0| 0.0016781|
+|Jango Fett            |    183|   79.0|  23.58984|
+|Zam Wesell            |    168|   55.0|  19.48696|
+|Dexter Jettster       |    198|  102.0|  26.01775|
+|Lama Su               |    229|   88.0|  16.78076|
 |Taun We               |    213|     NA|        NA|
 |Jocasta Nu            |    167|     NA|        NA|
 |R4-P17                |     96|     NA|        NA|
-|Wat Tambor            |    193|   48.0| 0.0012886|
+|Wat Tambor            |    193|   48.0|  12.88625|
 |San Hill              |    191|     NA|        NA|
-|Shaak Ti              |    178|   57.0| 0.0017990|
-|Grievous              |    216|  159.0| 0.0034079|
-|Tarfful               |    234|  136.0| 0.0024837|
-|Raymus Antilles       |    188|   79.0| 0.0022352|
-|Sly Moore             |    178|   48.0| 0.0015150|
-|Tion Medon            |    206|   80.0| 0.0018852|
+|Shaak Ti              |    178|   57.0|  17.99015|
+|Grievous              |    216|  159.0|  34.07922|
+|Tarfful               |    234|  136.0|  24.83746|
+|Raymus Antilles       |    188|   79.0|  22.35174|
+|Sly Moore             |    178|   48.0|  15.14960|
+|Tion Medon            |    206|   80.0|  18.85192|
 |Finn                  |     NA|     NA|        NA|
 |Rey                   |     NA|     NA|        NA|
 |Poe Dameron           |     NA|     NA|        NA|

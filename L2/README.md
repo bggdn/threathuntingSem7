@@ -30,14 +30,14 @@
     > starwars %>% nrow()
     [1] 87
 
-2.  Сколько столбцов в датафрейме?
+1.  Сколько столбцов в датафрейме?
 
 <!-- -->
 
     > starwars %>% ncol()
     [1] 14
 
-3.  Как просмотреть примерный вид датафрейма?
+1.  Как просмотреть примерный вид датафрейма?
 
 <!-- -->
 
@@ -59,7 +59,7 @@
     $ vehicles   <list> <"Snowspeeder", "Imperial Speeder Bike">, <>, <>, <>, "Imperial Speeder B…
     $ starships  <list> <"X-wing", "Imperial shuttle">, <>, <>, "TIE Advanced x1", <>, <>, <>, <>…
 
-4.  Сколько уникальных рас персонажей (species) представлено в данных?
+1.  Сколько уникальных рас персонажей (species) представлено в данных?
 
 <!-- -->
 
@@ -189,7 +189,7 @@
 </tbody>
 </table>
 
-5.  Найти самого высокого персонажа.
+1.  Найти самого высокого персонажа.
 
 <!-- -->
 
@@ -201,7 +201,7 @@
     # ℹ 86 more rows
     # ℹ Use `print(n = ...)` to see more rows
 
-6.  Найти всех персонажей ниже 170.
+1.  Найти всех персонажей ниже 170.
 
 <!-- -->
 
@@ -438,11 +438,11 @@
 </tbody>
 </table>
 
-7.  Подсчитать ИМТ (индекс массы тела) для всех персонажей.
+1.  Подсчитать ИМТ (индекс массы тела) для всех персонажей.
 
 <!-- -->
 
-    > mutate(starwars, BMI=mass/(height^2)) %>% select(name, height, mass, BMI) |> knitr::kable(format='markdown')
+    > mutate(starwars, BMI=mass/((height/100)^2)) %>% select(name, height, mass, BMI) |> knitr::kable(format='markdown')
 
 <table>
 <thead>
@@ -458,67 +458,67 @@
 <td style="text-align: left;">Luke Skywalker</td>
 <td style="text-align: right;">172</td>
 <td style="text-align: right;">77.0</td>
-<td style="text-align: right;">0.0026028</td>
+<td style="text-align: right;">26.02758</td>
 </tr>
 <tr>
 <td style="text-align: left;">C-3PO</td>
 <td style="text-align: right;">167</td>
 <td style="text-align: right;">75.0</td>
-<td style="text-align: right;">0.0026892</td>
+<td style="text-align: right;">26.89232</td>
 </tr>
 <tr>
 <td style="text-align: left;">R2-D2</td>
 <td style="text-align: right;">96</td>
 <td style="text-align: right;">32.0</td>
-<td style="text-align: right;">0.0034722</td>
+<td style="text-align: right;">34.72222</td>
 </tr>
 <tr>
 <td style="text-align: left;">Darth Vader</td>
 <td style="text-align: right;">202</td>
 <td style="text-align: right;">136.0</td>
-<td style="text-align: right;">0.0033330</td>
+<td style="text-align: right;">33.33007</td>
 </tr>
 <tr>
 <td style="text-align: left;">Leia Organa</td>
 <td style="text-align: right;">150</td>
 <td style="text-align: right;">49.0</td>
-<td style="text-align: right;">0.0021778</td>
+<td style="text-align: right;">21.77778</td>
 </tr>
 <tr>
 <td style="text-align: left;">Owen Lars</td>
 <td style="text-align: right;">178</td>
 <td style="text-align: right;">120.0</td>
-<td style="text-align: right;">0.0037874</td>
+<td style="text-align: right;">37.87401</td>
 </tr>
 <tr>
 <td style="text-align: left;">Beru Whitesun Lars</td>
 <td style="text-align: right;">165</td>
 <td style="text-align: right;">75.0</td>
-<td style="text-align: right;">0.0027548</td>
+<td style="text-align: right;">27.54821</td>
 </tr>
 <tr>
 <td style="text-align: left;">R5-D4</td>
 <td style="text-align: right;">97</td>
 <td style="text-align: right;">32.0</td>
-<td style="text-align: right;">0.0034010</td>
+<td style="text-align: right;">34.00999</td>
 </tr>
 <tr>
 <td style="text-align: left;">Biggs Darklighter</td>
 <td style="text-align: right;">183</td>
 <td style="text-align: right;">84.0</td>
-<td style="text-align: right;">0.0025083</td>
+<td style="text-align: right;">25.08286</td>
 </tr>
 <tr>
 <td style="text-align: left;">Obi-Wan Kenobi</td>
 <td style="text-align: right;">182</td>
 <td style="text-align: right;">77.0</td>
-<td style="text-align: right;">0.0023246</td>
+<td style="text-align: right;">23.24598</td>
 </tr>
 <tr>
 <td style="text-align: left;">Anakin Skywalker</td>
 <td style="text-align: right;">188</td>
 <td style="text-align: right;">84.0</td>
-<td style="text-align: right;">0.0023766</td>
+<td style="text-align: right;">23.76641</td>
 </tr>
 <tr>
 <td style="text-align: left;">Wilhuff Tarkin</td>
@@ -530,85 +530,85 @@
 <td style="text-align: left;">Chewbacca</td>
 <td style="text-align: right;">228</td>
 <td style="text-align: right;">112.0</td>
-<td style="text-align: right;">0.0021545</td>
+<td style="text-align: right;">21.54509</td>
 </tr>
 <tr>
 <td style="text-align: left;">Han Solo</td>
 <td style="text-align: right;">180</td>
 <td style="text-align: right;">80.0</td>
-<td style="text-align: right;">0.0024691</td>
+<td style="text-align: right;">24.69136</td>
 </tr>
 <tr>
 <td style="text-align: left;">Greedo</td>
 <td style="text-align: right;">173</td>
 <td style="text-align: right;">74.0</td>
-<td style="text-align: right;">0.0024725</td>
+<td style="text-align: right;">24.72518</td>
 </tr>
 <tr>
 <td style="text-align: left;">Jabba Desilijic Tiure</td>
 <td style="text-align: right;">175</td>
 <td style="text-align: right;">1358.0</td>
-<td style="text-align: right;">0.0443429</td>
+<td style="text-align: right;">443.42857</td>
 </tr>
 <tr>
 <td style="text-align: left;">Wedge Antilles</td>
 <td style="text-align: right;">170</td>
 <td style="text-align: right;">77.0</td>
-<td style="text-align: right;">0.0026644</td>
+<td style="text-align: right;">26.64360</td>
 </tr>
 <tr>
 <td style="text-align: left;">Jek Tono Porkins</td>
 <td style="text-align: right;">180</td>
 <td style="text-align: right;">110.0</td>
-<td style="text-align: right;">0.0033951</td>
+<td style="text-align: right;">33.95062</td>
 </tr>
 <tr>
 <td style="text-align: left;">Yoda</td>
 <td style="text-align: right;">66</td>
 <td style="text-align: right;">17.0</td>
-<td style="text-align: right;">0.0039027</td>
+<td style="text-align: right;">39.02663</td>
 </tr>
 <tr>
 <td style="text-align: left;">Palpatine</td>
 <td style="text-align: right;">170</td>
 <td style="text-align: right;">75.0</td>
-<td style="text-align: right;">0.0025952</td>
+<td style="text-align: right;">25.95156</td>
 </tr>
 <tr>
 <td style="text-align: left;">Boba Fett</td>
 <td style="text-align: right;">183</td>
 <td style="text-align: right;">78.2</td>
-<td style="text-align: right;">0.0023351</td>
+<td style="text-align: right;">23.35095</td>
 </tr>
 <tr>
 <td style="text-align: left;">IG-88</td>
 <td style="text-align: right;">200</td>
 <td style="text-align: right;">140.0</td>
-<td style="text-align: right;">0.0035000</td>
+<td style="text-align: right;">35.00000</td>
 </tr>
 <tr>
 <td style="text-align: left;">Bossk</td>
 <td style="text-align: right;">190</td>
 <td style="text-align: right;">113.0</td>
-<td style="text-align: right;">0.0031302</td>
+<td style="text-align: right;">31.30194</td>
 </tr>
 <tr>
 <td style="text-align: left;">Lando Calrissian</td>
 <td style="text-align: right;">177</td>
 <td style="text-align: right;">79.0</td>
-<td style="text-align: right;">0.0025216</td>
+<td style="text-align: right;">25.21625</td>
 </tr>
 <tr>
 <td style="text-align: left;">Lobot</td>
 <td style="text-align: right;">175</td>
 <td style="text-align: right;">79.0</td>
-<td style="text-align: right;">0.0025796</td>
+<td style="text-align: right;">25.79592</td>
 </tr>
 <tr>
 <td style="text-align: left;">Ackbar</td>
 <td style="text-align: right;">180</td>
 <td style="text-align: right;">83.0</td>
-<td style="text-align: right;">0.0025617</td>
+<td style="text-align: right;">25.61728</td>
 </tr>
 <tr>
 <td style="text-align: left;">Mon Mothma</td>
@@ -626,25 +626,25 @@
 <td style="text-align: left;">Wicket Systri Warrick</td>
 <td style="text-align: right;">88</td>
 <td style="text-align: right;">20.0</td>
-<td style="text-align: right;">0.0025826</td>
+<td style="text-align: right;">25.82645</td>
 </tr>
 <tr>
 <td style="text-align: left;">Nien Nunb</td>
 <td style="text-align: right;">160</td>
 <td style="text-align: right;">68.0</td>
-<td style="text-align: right;">0.0026563</td>
+<td style="text-align: right;">26.56250</td>
 </tr>
 <tr>
 <td style="text-align: left;">Qui-Gon Jinn</td>
 <td style="text-align: right;">193</td>
 <td style="text-align: right;">89.0</td>
-<td style="text-align: right;">0.0023893</td>
+<td style="text-align: right;">23.89326</td>
 </tr>
 <tr>
 <td style="text-align: left;">Nute Gunray</td>
 <td style="text-align: right;">191</td>
 <td style="text-align: right;">90.0</td>
-<td style="text-align: right;">0.0024670</td>
+<td style="text-align: right;">24.67038</td>
 </tr>
 <tr>
 <td style="text-align: left;">Finis Valorum</td>
@@ -656,19 +656,19 @@
 <td style="text-align: left;">Padmé Amidala</td>
 <td style="text-align: right;">185</td>
 <td style="text-align: right;">45.0</td>
-<td style="text-align: right;">0.0013148</td>
+<td style="text-align: right;">13.14828</td>
 </tr>
 <tr>
 <td style="text-align: left;">Jar Jar Binks</td>
 <td style="text-align: right;">196</td>
 <td style="text-align: right;">66.0</td>
-<td style="text-align: right;">0.0017180</td>
+<td style="text-align: right;">17.18034</td>
 </tr>
 <tr>
 <td style="text-align: left;">Roos Tarpals</td>
 <td style="text-align: right;">224</td>
 <td style="text-align: right;">82.0</td>
-<td style="text-align: right;">0.0016342</td>
+<td style="text-align: right;">16.34247</td>
 </tr>
 <tr>
 <td style="text-align: left;">Rugor Nass</td>
@@ -692,7 +692,7 @@
 <td style="text-align: left;">Sebulba</td>
 <td style="text-align: right;">112</td>
 <td style="text-align: right;">40.0</td>
-<td style="text-align: right;">0.0031888</td>
+<td style="text-align: right;">31.88776</td>
 </tr>
 <tr>
 <td style="text-align: left;">Quarsh Panaka</td>
@@ -710,7 +710,7 @@
 <td style="text-align: left;">Darth Maul</td>
 <td style="text-align: right;">175</td>
 <td style="text-align: right;">80.0</td>
-<td style="text-align: right;">0.0026122</td>
+<td style="text-align: right;">26.12245</td>
 </tr>
 <tr>
 <td style="text-align: left;">Bib Fortuna</td>
@@ -722,19 +722,19 @@
 <td style="text-align: left;">Ayla Secura</td>
 <td style="text-align: right;">178</td>
 <td style="text-align: right;">55.0</td>
-<td style="text-align: right;">0.0017359</td>
+<td style="text-align: right;">17.35892</td>
 </tr>
 <tr>
 <td style="text-align: left;">Ratts Tyerel</td>
 <td style="text-align: right;">79</td>
 <td style="text-align: right;">15.0</td>
-<td style="text-align: right;">0.0024035</td>
+<td style="text-align: right;">24.03461</td>
 </tr>
 <tr>
 <td style="text-align: left;">Dud Bolt</td>
 <td style="text-align: right;">94</td>
 <td style="text-align: right;">45.0</td>
-<td style="text-align: right;">0.0050928</td>
+<td style="text-align: right;">50.92802</td>
 </tr>
 <tr>
 <td style="text-align: left;">Gasgano</td>
@@ -746,25 +746,25 @@
 <td style="text-align: left;">Ben Quadinaros</td>
 <td style="text-align: right;">163</td>
 <td style="text-align: right;">65.0</td>
-<td style="text-align: right;">0.0024465</td>
+<td style="text-align: right;">24.46460</td>
 </tr>
 <tr>
 <td style="text-align: left;">Mace Windu</td>
 <td style="text-align: right;">188</td>
 <td style="text-align: right;">84.0</td>
-<td style="text-align: right;">0.0023766</td>
+<td style="text-align: right;">23.76641</td>
 </tr>
 <tr>
 <td style="text-align: left;">Ki-Adi-Mundi</td>
 <td style="text-align: right;">198</td>
 <td style="text-align: right;">82.0</td>
-<td style="text-align: right;">0.0020916</td>
+<td style="text-align: right;">20.91623</td>
 </tr>
 <tr>
 <td style="text-align: left;">Kit Fisto</td>
 <td style="text-align: right;">196</td>
 <td style="text-align: right;">87.0</td>
-<td style="text-align: right;">0.0022647</td>
+<td style="text-align: right;">22.64681</td>
 </tr>
 <tr>
 <td style="text-align: left;">Eeth Koth</td>
@@ -776,7 +776,7 @@
 <td style="text-align: left;">Adi Gallia</td>
 <td style="text-align: right;">184</td>
 <td style="text-align: right;">50.0</td>
-<td style="text-align: right;">0.0014768</td>
+<td style="text-align: right;">14.76843</td>
 </tr>
 <tr>
 <td style="text-align: left;">Saesee Tiin</td>
@@ -794,7 +794,7 @@
 <td style="text-align: left;">Plo Koon</td>
 <td style="text-align: right;">188</td>
 <td style="text-align: right;">80.0</td>
-<td style="text-align: right;">0.0022635</td>
+<td style="text-align: right;">22.63468</td>
 </tr>
 <tr>
 <td style="text-align: left;">Mas Amedda</td>
@@ -806,7 +806,7 @@
 <td style="text-align: left;">Gregar Typho</td>
 <td style="text-align: right;">185</td>
 <td style="text-align: right;">85.0</td>
-<td style="text-align: right;">0.0024836</td>
+<td style="text-align: right;">24.83565</td>
 </tr>
 <tr>
 <td style="text-align: left;">Cordé</td>
@@ -824,19 +824,19 @@
 <td style="text-align: left;">Poggle the Lesser</td>
 <td style="text-align: right;">183</td>
 <td style="text-align: right;">80.0</td>
-<td style="text-align: right;">0.0023888</td>
+<td style="text-align: right;">23.88844</td>
 </tr>
 <tr>
 <td style="text-align: left;">Luminara Unduli</td>
 <td style="text-align: right;">170</td>
 <td style="text-align: right;">56.2</td>
-<td style="text-align: right;">0.0019446</td>
+<td style="text-align: right;">19.44637</td>
 </tr>
 <tr>
 <td style="text-align: left;">Barriss Offee</td>
 <td style="text-align: right;">166</td>
 <td style="text-align: right;">50.0</td>
-<td style="text-align: right;">0.0018145</td>
+<td style="text-align: right;">18.14487</td>
 </tr>
 <tr>
 <td style="text-align: left;">Dormé</td>
@@ -848,7 +848,7 @@
 <td style="text-align: left;">Dooku</td>
 <td style="text-align: right;">193</td>
 <td style="text-align: right;">80.0</td>
-<td style="text-align: right;">0.0021477</td>
+<td style="text-align: right;">21.47709</td>
 </tr>
 <tr>
 <td style="text-align: left;">Bail Prestor Organa</td>
@@ -860,25 +860,25 @@
 <td style="text-align: left;">Jango Fett</td>
 <td style="text-align: right;">183</td>
 <td style="text-align: right;">79.0</td>
-<td style="text-align: right;">0.0023590</td>
+<td style="text-align: right;">23.58984</td>
 </tr>
 <tr>
 <td style="text-align: left;">Zam Wesell</td>
 <td style="text-align: right;">168</td>
 <td style="text-align: right;">55.0</td>
-<td style="text-align: right;">0.0019487</td>
+<td style="text-align: right;">19.48696</td>
 </tr>
 <tr>
 <td style="text-align: left;">Dexter Jettster</td>
 <td style="text-align: right;">198</td>
 <td style="text-align: right;">102.0</td>
-<td style="text-align: right;">0.0026018</td>
+<td style="text-align: right;">26.01775</td>
 </tr>
 <tr>
 <td style="text-align: left;">Lama Su</td>
 <td style="text-align: right;">229</td>
 <td style="text-align: right;">88.0</td>
-<td style="text-align: right;">0.0016781</td>
+<td style="text-align: right;">16.78076</td>
 </tr>
 <tr>
 <td style="text-align: left;">Taun We</td>
@@ -902,7 +902,7 @@
 <td style="text-align: left;">Wat Tambor</td>
 <td style="text-align: right;">193</td>
 <td style="text-align: right;">48.0</td>
-<td style="text-align: right;">0.0012886</td>
+<td style="text-align: right;">12.88625</td>
 </tr>
 <tr>
 <td style="text-align: left;">San Hill</td>
@@ -914,37 +914,37 @@
 <td style="text-align: left;">Shaak Ti</td>
 <td style="text-align: right;">178</td>
 <td style="text-align: right;">57.0</td>
-<td style="text-align: right;">0.0017990</td>
+<td style="text-align: right;">17.99015</td>
 </tr>
 <tr>
 <td style="text-align: left;">Grievous</td>
 <td style="text-align: right;">216</td>
 <td style="text-align: right;">159.0</td>
-<td style="text-align: right;">0.0034079</td>
+<td style="text-align: right;">34.07922</td>
 </tr>
 <tr>
 <td style="text-align: left;">Tarfful</td>
 <td style="text-align: right;">234</td>
 <td style="text-align: right;">136.0</td>
-<td style="text-align: right;">0.0024837</td>
+<td style="text-align: right;">24.83746</td>
 </tr>
 <tr>
 <td style="text-align: left;">Raymus Antilles</td>
 <td style="text-align: right;">188</td>
 <td style="text-align: right;">79.0</td>
-<td style="text-align: right;">0.0022352</td>
+<td style="text-align: right;">22.35174</td>
 </tr>
 <tr>
 <td style="text-align: left;">Sly Moore</td>
 <td style="text-align: right;">178</td>
 <td style="text-align: right;">48.0</td>
-<td style="text-align: right;">0.0015150</td>
+<td style="text-align: right;">15.14960</td>
 </tr>
 <tr>
 <td style="text-align: left;">Tion Medon</td>
 <td style="text-align: right;">206</td>
 <td style="text-align: right;">80.0</td>
-<td style="text-align: right;">0.0018852</td>
+<td style="text-align: right;">18.85192</td>
 </tr>
 <tr>
 <td style="text-align: left;">Finn</td>
@@ -979,7 +979,7 @@
 </tbody>
 </table>
 
-8.  Найти 10 самых “вытянутых” персонажей. “Вытянутость” оценить по
+1.  Найти 10 самых “вытянутых” персонажей. “Вытянутость” оценить по
     отношению массы (mass) к росту (height) персонажей.
 
 <!-- -->
@@ -1059,7 +1059,7 @@
 </tbody>
 </table>
 
-9.  Найти средний возраст персонажей каждой расы вселенной Звездных
+1.  Найти средний возраст персонажей каждой расы вселенной Звездных
     войн.
 
 <!-- -->
@@ -1229,7 +1229,7 @@
 </tbody>
 </table>
 
-10.  Найти самый распространенный цвет глаз персонажей вселенной Звездных
+1.  Найти самый распространенный цвет глаз персонажей вселенной Звездных
     войн.
 
 <!-- -->
@@ -1240,7 +1240,7 @@
       <chr>     <int>
     1 brown        21
 
-11.  Подсчитать среднюю длину имени в каждой расе вселенной Звездных
+1.  Подсчитать среднюю длину имени в каждой расе вселенной Звездных
     войн.
 
 <!-- -->
