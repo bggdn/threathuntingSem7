@@ -1,5 +1,5 @@
 # Введение в R
-bagdagadan@yandex.ru
+
 
 ## Цель работы
 
@@ -39,8 +39,7 @@ bagdagadan@yandex.ru
 3.Запустив задание с помощью `swirl::swirl()`, выбрать курс R
 Programming и пройти первые 5 подкурсов:
 
-    > swirl::swirl()
-
+    swirl::swirl()
     | Welcome to swirl! Please sign in. If you've been here before, use the same name as you did
     | then. If you are new, call yourself something unique.
 
@@ -172,7 +171,10 @@ Programming и пройти первые 5 подкурсов:
     | In its simplest form, R can be used as an interactive calculator. Type 5 + 7 and press
     | Enter.
 
-    > 5+7
+``` r
+5+7
+```
+
     [1] 12
 
     | Excellent work!

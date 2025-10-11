@@ -30,40 +30,57 @@
     > starwars %>% nrow()
     [1] 87
 
-1.  Сколько столбцов в датафрейме?
+2.  Сколько столбцов в датафрейме?
 
-<!-- -->
+``` r
+library(dplyr)
+```
 
-    > starwars %>% ncol()
+
+    Присоединяю пакет: 'dplyr'
+
+    Следующие объекты скрыты от 'package:stats':
+
+        filter, lag
+
+    Следующие объекты скрыты от 'package:base':
+
+        intersect, setdiff, setequal, union
+
+``` r
+starwars %>% ncol()
+```
+
     [1] 14
 
-1.  Как просмотреть примерный вид датафрейма?
+3.  Как просмотреть примерный вид датафрейма?
 
-<!-- -->
+``` r
+starwars %>% glimpse()
+```
 
-    > starwars %>% glimpse()
     Rows: 87
     Columns: 14
-    $ name       <chr> "Luke Skywalker", "C-3PO", "R2-D2", "Darth Vader", "Leia Organa", "Owen La…
-    $ height     <int> 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 228, 180, 173, 1…
-    $ mass       <dbl> 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.0, 84.0, NA, 11…
-    $ hair_color <chr> "blond", NA, NA, "none", "brown", "brown, grey", "brown", NA, "black", "au…
-    $ skin_color <chr> "fair", "gold", "white, blue", "white", "light", "light", "light", "white,…
-    $ eye_color  <chr> "blue", "yellow", "red", "yellow", "brown", "blue", "blue", "red", "brown"…
-    $ birth_year <dbl> 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, 41.9, 64.0, 200…
-    $ sex        <chr> "male", "none", "none", "male", "female", "male", "female", "none", "male"…
-    $ gender     <chr> "masculine", "masculine", "masculine", "masculine", "feminine", "masculine…
-    $ homeworld  <chr> "Tatooine", "Tatooine", "Naboo", "Tatooine", "Alderaan", "Tatooine", "Tato…
-    $ species    <chr> "Human", "Droid", "Droid", "Human", "Human", "Human", "Human", "Droid", "H…
-    $ films      <list> <"A New Hope", "The Empire Strikes Back", "Return of the Jedi", "Revenge …
-    $ vehicles   <list> <"Snowspeeder", "Imperial Speeder Bike">, <>, <>, <>, "Imperial Speeder B…
-    $ starships  <list> <"X-wing", "Imperial shuttle">, <>, <>, "TIE Advanced x1", <>, <>, <>, <>…
+    $ name       <chr> "Luke Skywalker", "C-3PO", "R2-D2", "Darth Vader", "Leia Or…
+    $ height     <int> 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2…
+    $ mass       <dbl> 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.…
+    $ hair_color <chr> "blond", NA, NA, "none", "brown", "brown, grey", "brown", N…
+    $ skin_color <chr> "fair", "gold", "white, blue", "white", "light", "light", "…
+    $ eye_color  <chr> "blue", "yellow", "red", "yellow", "brown", "blue", "blue",…
+    $ birth_year <dbl> 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, …
+    $ sex        <chr> "male", "none", "none", "male", "female", "male", "female",…
+    $ gender     <chr> "masculine", "masculine", "masculine", "masculine", "femini…
+    $ homeworld  <chr> "Tatooine", "Tatooine", "Naboo", "Tatooine", "Alderaan", "T…
+    $ species    <chr> "Human", "Droid", "Droid", "Human", "Human", "Human", "Huma…
+    $ films      <list> <"A New Hope", "The Empire Strikes Back", "Return of the J…
+    $ vehicles   <list> <"Snowspeeder", "Imperial Speeder Bike">, <>, <>, <>, "Imp…
+    $ starships  <list> <"X-wing", "Imperial shuttle">, <>, <>, "TIE Advanced x1",…
 
-1.  Сколько уникальных рас персонажей (species) представлено в данных?
+4.  Сколько уникальных рас персонажей (species) представлено в данных?
 
-<!-- -->
-
-    > starwars %>% distinct(species) |> knitr::kable(format='markdown')
+``` r
+starwars %>% distinct(species) |> knitr::kable(format='markdown')
+```
 
 <table>
 <thead>
@@ -189,23 +206,23 @@
 </tbody>
 </table>
 
-1.  Найти самого высокого персонажа.
+5.  Найти самого высокого персонажа.
 
-<!-- -->
+``` r
+print(starwars %>% select(name, height) %>% arrange(desc(height)), n=1)
+```
 
-    > print(starwars %>% select(name, height) %>% arrange(desc(height)), n=1)
     # A tibble: 87 × 2
       name        height
       <chr>        <int>
     1 Yarael Poof    264
     # ℹ 86 more rows
-    # ℹ Use `print(n = ...)` to see more rows
 
-1.  Найти всех персонажей ниже 170.
+6.  Найти всех персонажей ниже 170.
 
-<!-- -->
-
-    > select(starwars, name, height) %>% filter(height>170) |> knitr::kable(format='markdown')
+``` r
+select(starwars, name, height) %>% filter(height>170) |> knitr::kable(format='markdown')
+```
 
 <table>
 <thead>
@@ -438,11 +455,11 @@
 </tbody>
 </table>
 
-1.  Подсчитать ИМТ (индекс массы тела) для всех персонажей.
+7.  Подсчитать ИМТ (индекс массы тела) для всех персонажей.
 
-<!-- -->
-
-    > mutate(starwars, BMI=mass/((height/100)^2)) %>% select(name, height, mass, BMI) |> knitr::kable(format='markdown')
+``` r
+mutate(starwars, BMI=mass/((height/100)^2)) %>% select(name, height, mass, BMI) |> knitr::kable(format='markdown')
+```
 
 <table>
 <thead>
@@ -979,12 +996,12 @@
 </tbody>
 </table>
 
-1.  Найти 10 самых “вытянутых” персонажей. “Вытянутость” оценить по
+8.  Найти 10 самых “вытянутых” персонажей. “Вытянутость” оценить по
     отношению массы (mass) к росту (height) персонажей.
 
-<!-- -->
-
-    > knitr::kable(format='markdown', head(mutate(starwars, my_param=mass/height) %>% arrange(my_param) %>% select(name, height, mass, my_param), n=10))
+``` r
+knitr::kable(format='markdown', head(mutate(starwars, my_param=mass/height) %>% arrange(my_param) %>% select(name, height, mass, my_param), n=10))
+```
 
 <table>
 <thead>
@@ -1059,12 +1076,12 @@
 </tbody>
 </table>
 
-1.  Найти средний возраст персонажей каждой расы вселенной Звездных
+9.  Найти средний возраст персонажей каждой расы вселенной Звездных
     войн.
 
-<!-- -->
-
-    > starwars %>% group_by(species) %>% summarise(Avg_age = median(100+birth_year, na.rm = TRUE)) |> knitr::kable(format='markdown')
+``` r
+starwars %>% group_by(species) %>% summarise(Avg_age = median(100+birth_year, na.rm = TRUE)) |> knitr::kable(format='markdown')
+```
 
 <table>
 <thead>
@@ -1229,23 +1246,24 @@
 </tbody>
 </table>
 
-1.  Найти самый распространенный цвет глаз персонажей вселенной Звездных
+10.  Найти самый распространенный цвет глаз персонажей вселенной Звездных
     войн.
 
-<!-- -->
+``` r
+starwars %>% count(eye_color) %>% filter(n == max(n))
+```
 
-    > starwars %>% count(eye_color) %>% filter(n == max(n))
     # A tibble: 1 × 2
       eye_color     n
       <chr>     <int>
     1 brown        21
 
-1.  Подсчитать среднюю длину имени в каждой расе вселенной Звездных
+11.  Подсчитать среднюю длину имени в каждой расе вселенной Звездных
     войн.
 
-<!-- -->
-
-    > starwars %>% group_by(species) %>% summarise(Avg_age = median(nchar(name), na.rm = TRUE)) |> knitr::kable(format='markdown')
+``` r
+starwars %>% group_by(species) %>% summarise(Avg_age = median(nchar(name), na.rm = TRUE)) |> knitr::kable(format='markdown')
+```
 
 <table>
 <thead>
